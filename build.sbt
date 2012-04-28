@@ -5,7 +5,7 @@ version := "0.1.0"
 
 organization := "net.lift"
  
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
  
 seq(webSettings: _*)
 
@@ -15,10 +15,11 @@ resolvers += "Sonatype OSS Snapshot Repository" at "https://oss.sonatype.org/con
  
 libraryDependencies ++= {
   val liftVersion = "2.4"
+  val liftScalaVersion = "2.9.1"
   Seq(
-    "net.liftweb" %% "lift-webkit" % liftVersion % "compile->default" withSources(),
-    "net.liftweb" %% "lift-mapper" % liftVersion % "compile->default" withSources(),
-    "net.liftweb" %% "lift-wizard" % liftVersion % "compile->default" withSources()
+    "net.liftweb" % ("lift-webkit_" + liftScalaVersion) % liftVersion % "compile->default" withSources(),
+    "net.liftweb" % ("lift-mapper_" + liftScalaVersion) % liftVersion % "compile->default" withSources(),
+    "net.liftweb" % ("lift-wizard_" + liftScalaVersion) % liftVersion % "compile->default" withSources()
   )
 }
   
